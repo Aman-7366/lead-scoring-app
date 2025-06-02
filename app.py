@@ -2,9 +2,15 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle as pk
-model= pk.load(open('model.pkl','rb'))
-scaler= pk.load(open('scaler.pkl','rb'))
-label_encoders= pk.load(open('label_encoders.pkl','rb'))
+with open("/mnt/data/model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+with open("/mnt/data/scaler.pkl", "wb") as f:
+    pickle.dump(scaler, f)
+
+with open("/mnt/data/label_encoders.pkl", "wb") as f:
+    pickle.dump(label_encoders, f)
+
 
 st.header('Real estate Lead Scoring App')
 
